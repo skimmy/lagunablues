@@ -1,5 +1,3 @@
-"use client";
-
 import { pubPath } from "@/lib/util";
 import Carousel from "../components/carousel";
 
