@@ -1,0 +1,14 @@
+[
+    {
+        "avatar": "/foto/pizza1.jpg",
+        "name": "Margherita",
+        "description": "Pomodoro - Mozzarella",
+        "price": "7,50 €"
+    },
+    {
+        "avatar": "/foto/pizza2.jpg",
+        "name": "Capricciosa",
+        "description": "Pomodoro - Mozzarella - Prosciutto - Funghi - Carciofini",
+        "price": "9,00 €"
+    }
+]

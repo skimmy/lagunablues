@@ -1,0 +1,14 @@
+[
+    {
+        "avatar": "/foto/fish01.jpg",
+        "name": "Orata",
+        "description": "Ai ferri",
+        "price": "27,00 €"
+    },
+    {
+        "avatar": "/foto/fish02.jpg",
+        "name": "Baccalà alla vicentina",
+        "description": "Gut und Günstig!",
+        "price": "13,50 €"
+    }
+]
