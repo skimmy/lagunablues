@@ -1,9 +1,10 @@
+import { pubPath } from "@/lib/util";
 import Carousel from "./components/carousel";
 
 const images = [
-  "/foto/lb_001.jpeg",
-  "/foto/lb_002.jpeg",
-  "/foto/lb_003.jpeg"
+  pubPath("/foto/lb_001.jpeg"),
+  pubPath("/foto/lb_002.jpeg"),
+  pubPath("/foto/lb_003.jpeg")
 ];
 
 export default function Home() {

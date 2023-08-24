@@ -1,13 +1,14 @@
+import { pubPath } from "@/lib/util";
 import SubMenu from "./submenu";
 
 const subMenus = [
     {
         title: "Pizza",
-        item_file: "/menu/pizza.json",
+        item_file: pubPath("/menu/pizza.json"),
     },
     {
         title: "Fish",
-        item_file: "/menu/fish.json"
+        item_file: pubPath("/menu/fish.json")
     }
 ]
 

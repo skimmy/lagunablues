@@ -7,13 +7,13 @@ const Navigation = () => {
     <nav className="bg-gray-800 p-2">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         <div className="flex items-center w-40">
-          <a href="/" className="text-white text-2xl font-bold">
+          <Link href="/" className="text-white text-2xl font-bold">
           <img
               src={pubPath("/logofull.svg")}
               alt="Restaurant Logo"
               className="h-full w-full m-0" 
             />
-          </a>
+          </Link>
         </div>
         <ul className="flex space-x-4">
           <li>
