@@ -10,10 +10,14 @@ const images = [
 ]
 
 export default function Festival() {
-    return(
-        <div>
-            <h1>Festival</h1>
+    return (
+        <div className="relative flex justify-center items-center">
+
             <Carousel images={images} showButtons={false}></Carousel>
+
+            <div className="absolute inset-y-0 left-0 mt-16 w-full text-center">
+                <h1 className="text-6xl">The Festival</h1>
+            </div>
         </div>
     )
 }

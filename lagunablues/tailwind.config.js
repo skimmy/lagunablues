@@ -8,6 +8,11 @@ module.exports = {
       transitionDuration: {
         "1500": "1500ms",
         "2000": "2000ms"
+      },
+      brightness: {
+        40: '.4',
+        30: '.3',
+        20: '.2',
       }
     },
   },

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 
-const Carousel = ({ images, showButtons = true, switchTime = 4000 }) => {
+const Carousel = ({ images, showButtons = true, switchTime = 5000, brightness=100 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     // Move to the next image
@@ -22,17 +22,17 @@ const Carousel = ({ images, showButtons = true, switchTime = 4000 }) => {
     }, [currentIndex]);
 
     return (
-        <div className="relative h-96">
+        <div className="relative w-full h-[40rem]">
             {images.map((image, index) => (
                 <div
                     key={index}
-                    className={`transition-opacity duration-1500 absolute inset-0 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+                    className={`transition-opacity duration-1000 absolute inset-0 brightness-40 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
                         }`}
                 >
                     <img
                         src={image}
                         alt={`Slide ${index}`}
-                        className="w-full h-full object-contain object-center"
+                        className="w-full h-full object-cover object-center"
                     />
                 </div>
             ))}

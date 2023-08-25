@@ -9,15 +9,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white font-serif">
+      <body className="bg-gray-900 text-white font-serif">
         <div className="flex flex-col min-h-screen">
           <div className="flex-grow">
-            <Navigation></Navigation>
-            <div className="mt-8 max-w-6xl mx-auto p-2">
+            <div>
+              <Navigation></Navigation>
+            </div>
+            <div className="mx-auto">
               {children}
             </div>
           </div>
-          <footer className="bg-gray-800 text-white text-center p-4">
+          <footer className="bg-black text-white text-center p-4">
             <span className="text-xs text-thin">© {new Date().getFullYear()} Laguna Blues (Falkenstein, Germany). All rights reserved.</span>
           </footer>
         </div>

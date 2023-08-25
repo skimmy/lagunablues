@@ -2,10 +2,16 @@ import React from 'react';
 import { pubPath } from '@/lib/util';
 import Link from 'next/link';
 
+const menuItems = [
+  { label: 'Menu', href: '/menu' },
+  { label: 'Festival', href: '/festival' },
+  { label: 'Find Us', href: '/find-us' },
+];
+
 const Navigation = () => {
   return (
-    <nav className="bg-gray-800 p-2">
-      <div className="max-w-6xl mx-auto flex justify-between items-center">
+    <nav className="bg-black p-2">
+      <div className="max-w-6xl mx-auto flex justify-between items-center drop-shadow">
         <div className="flex items-center w-40">
           <Link href="/" className="text-white text-2xl font-bold">
           <img
@@ -32,6 +38,7 @@ const Navigation = () => {
             </Link>
           </li>
         </ul>
+      
       </div>
     </nav>
   );
