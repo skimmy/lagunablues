@@ -20,19 +20,32 @@ const Carousel = ({ images, showButtons = true, switchTime = 5000, brightness=10
         const interval = setInterval(nextSlide, switchTime);
         return () => clearInterval(interval);
     }, [currentIndex]);
+// .container {
+//   display: grid;
+//   grid-template: "container";
+//   place-items: center;
+//   place-content: center;
+//   overflow: hidden;
+//   max-height: clamp(450px, 50vh, 600px);
+// }
 
+// .container > * {
+//   grid-area: container;
+//   max-width: 1000px;
+// }
     return (
-        <div className="relative w-full h-[40rem]">
+        <div className="grid grid-cols-1 justify-items-center overflow-hidden max-h-screen w-full">
             {images.map((image, index) => (
                 <div
                     key={index}
-                    className={`transition-opacity duration-1000 absolute inset-0 brightness-40 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+                    
+                    className={`min-w-full min-h-full row-start-1 row-end-1 col-start-1 col-end-1 transition-opacity duration-1000 brightness-40 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
                         }`}
                 >
                     <img
                         src={image}
                         alt={`Slide ${index}`}
-                        className="w-full h-full object-cover object-center"
+                        className="object-cover w-full"
                     />
                 </div>
             ))}

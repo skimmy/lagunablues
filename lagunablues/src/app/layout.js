@@ -15,13 +15,15 @@ export default function RootLayout({ children }) {
             <div>
               <Navigation></Navigation>
             </div>
-            <div className="mx-auto">
+            <div className="flex-grow mx-auto">
               {children}
             </div>
           </div>
-          <footer className="bg-black text-white text-center p-4">
-            <span className="text-xs text-thin">© {new Date().getFullYear()} Laguna Blues (Falkenstein, Germany). All rights reserved.</span>
-          </footer>
+          <div className="flex-grow">
+            <footer className="bg-black text-white text-center p-4">
+              <span className="text-xs text-thin">© {new Date().getFullYear()} Laguna Blues (Falkenstein, Germany). All rights reserved.</span>
+            </footer>
+          </div>
         </div>
       </body>
     </html>
