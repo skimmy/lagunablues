@@ -1,11 +1,12 @@
-import React from 'react';
-import { pubPath } from '@/lib/util';
-import Link from 'next/link';
+import React from "react";
+import { pubPath } from "@/lib/util";
+import Link from "next/link";
 
 const menuItems = [
-  { label: 'Menu', href: '/menu' },
-  { label: 'Festival', href: '/festival' },
-  { label: 'Find Us', href: '/find-us' },
+  { label: "Menu", href: "/menu" },
+  { label: "Festival", href: "/festival" },
+  { label: "Buy", href: "/festival/merch" },
+  { label: "Find Us", href: "/find-us" },
 ];
 
 const Navigation = () => {
@@ -14,31 +15,25 @@ const Navigation = () => {
       <div className="max-w-6xl mx-auto flex justify-between items-center drop-shadow">
         <div className="flex items-center w-40">
           <Link href="/" className="text-white text-2xl font-bold">
-          <img
+            <img
               src={pubPath("/logofull.svg")}
-              alt="Restaurant Logo"
-              className="h-full w-full m-0" 
+              alt="Laguna Blues"
+              className="h-full w-full m-0"
             />
           </Link>
         </div>
         <ul className="flex space-x-4">
-          <li>
-            <Link href="/menu" className="text-white hover:text-gray-300">
-              Menu
-            </Link>
-          </li>
-          <li>
-            <Link href="/festival" className="text-white hover:text-gray-300">
-              Festival
-            </Link>
-          </li>
-          <li>
-            <Link href="/find-us" className="text-white hover:text-gray-300">
-              Find Us
-            </Link>
-          </li>
+          {
+            menuItems.map((item, index) => (
+              <li key={index}>
+                <Link href={item.href} className="text-white hover:text-gray-300">
+                  {item.label}
+                </Link>
+              </li>
+            ))
+          }
         </ul>
-      
+
       </div>
     </nav>
   );
