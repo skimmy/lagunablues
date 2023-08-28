@@ -13,7 +13,10 @@ export default function Home() {
     <div className="relative z-1 flex justify-center items-center">
       <Carousel images={images} showButtons={false}></Carousel>
       <div className="absolute inset-y-0 left-0 z-2 mt-0 w-full h-full text-center">
-        <img className="w-full h-1/3 bg-white bg-opacity-50" src={pubPath("/logofull.svg")}></img>
+        {/* <div className="w-full h-1/3 bg-white bg-opacity-30"> */}
+        <div className="w-full h-1/3  bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.55)] from-20% to-80% to-transparent">
+        <img className="h-full w-full" src={pubPath("/logofull.svg")}></img>
+        </div>
         <div className="pt-8 pb-8 text-left">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl mt-4">Our history</h2>
