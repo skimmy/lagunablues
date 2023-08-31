@@ -26,7 +26,7 @@ const Carousel = ({ images, showButtons = true, switchTime = 5000, brightness=10
             {images.map((image, index) => (
                 <div
                     key={index}
-                    className={`transition-opacity duration-1000 absolute inset-0 brightness-40 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+                    className={`transition-opacity duration-1000 absolute inset-0 brightness-30 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
                         }`}
                 >
                     <img
