@@ -1,0 +1,14 @@
+[
+    {
+        "avatar": "",
+        "name": "Spaghetti bolognese",
+        "description": "Ragù",
+        "price": "7,00 €"
+    },
+    {
+        "avatar": "/foto/pizza2.jpg",
+        "name": "Rigatoni 4 Formaggi",
+        "description": "Formaggi misti",
+        "price": "8,00 €"
+    }
+]

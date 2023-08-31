@@ -1,14 +1,20 @@
 "use client"
 import React, { useState } from 'react';
+import Image from 'next/image'
+import { pubPath } from '@/lib/util';
 
 const AccordionItem = ({ item }) => {
     return (
         <div className="mb-5">
         <div className="mt-2 flex items-center cursor-pointer">
-            <img
+            
+            <Image
                 src={item.avatar}
                 alt={item.name}
                 className="w-10 h-10 rounded-full mr-2"
+                width={30}
+                height={30}
+                onError={e => e.target.src =pubPath("/icons/dish.svg")}
             />
             <div className="flex-1">
                 <p className="font-bold">{item.name}</p>

@@ -5,6 +5,7 @@ const nextConfig = {
     output: "export",
     assetPrefix: isGithubActions ? `/${repo}/` : "",
     basePath: isGithubActions ? `/${repo}` : "",
+    images: { unoptimized: true },
 }
 
 module.exports = nextConfig

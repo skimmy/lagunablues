@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Accordion from "../components/accordion";
+import LoadingSpinner from "../components/loading";
 
 export default function SubMenu({ title, url }) {
     const [loading, setLoading] = useState(true);
@@ -23,7 +24,7 @@ export default function SubMenu({ title, url }) {
 
     return (
         <>
-            {loading ? <div>Loading {title} ({url})</div> : <Accordion title={title} items={items} />}
+            {loading ? <LoadingSpinner /> : <Accordion title={title} items={items} />}
         </>
     );
 }

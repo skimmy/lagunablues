@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Pizza",
+        "item_file": "/menu/pizza.json"
+    },
+    {
+        "title": "Fish",
+        "item_file": "/menu/fish.json"
+    },
+    {
+        "title": "Pasta",
+        "item_file": "/menu/pasta.json"
+    }
+]
