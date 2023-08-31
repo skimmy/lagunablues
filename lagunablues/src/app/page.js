@@ -10,14 +10,13 @@ const images = [
 export default function Home() {
   return (
     <>
-    <div className="relative z-1 flex justify-center items-center">
-      <Carousel images={images} showButtons={false}></Carousel>
-      <div className="absolute inset-y-0 left-0 z-2 mt-0 w-full h-full text-center">
-        {/* <div className="w-full h-1/3 bg-white bg-opacity-30"> */}
-        <div className="w-full h-1/3  bg-gradient-to-r from-transparent via-[rgba(255,255,255,0.55)] from-20% to-80% to-transparent">
-        <img className="h-full w-full" src={pubPath("/logofull.svg")}></img>
-        </div>
-        <div className="pt-8 pb-8 text-left">
+    <div className="grid grid-cols-1">
+      <div className="z-1 row-start-1 row-end-1 col-start-1 col-end-1 ">
+        <Carousel images={images} showButtons={false}></Carousel>
+      </div>
+      <div className="z-20 row-start-1 row-end-1 col-start-1 col-end-1 left-0 z-2 mt-0 w-full text-center">
+        <img className="w-full h-40 bg-white bg-opacity-40" src={pubPath("/logofull.svg")}></img>
+         <div className="pt-8 pb-8 text-left">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl mt-1">Liebe Gäste,</h2>
             
@@ -29,7 +28,7 @@ export default function Home() {
             <hr />
             <p>Vivamus quis tristique augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut congue nisl quis elementum fermentum. Mauris at elit mollis urna dignissim varius vitae in erat. Integer at dui gravida, ultrices nibh ut, lobortis augue. Suspendisse vulputate urna nec posuere tincidunt. Donec aliquet porta commodo. Maecenas hendrerit ipsum nec maximus aliquam. In eu finibus orci. Sed efficitur orci et lobortis accumsan. Sed erat ligula, consectetur id molestie vitae, viverra non sem.</p> */}
           </div>
-        </div>
+        </div> 
       </div>
     </div>
 </>

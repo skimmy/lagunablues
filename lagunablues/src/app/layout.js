@@ -15,11 +15,12 @@ export default function RootLayout({ children }) {
             <div>
               <Navigation></Navigation>
             </div>
-            <div className="mx-auto">
+            <div className="flex-grow mx-auto">
               {children}
             </div>
           </div>
-          <footer className="bg-black text-gray-300 text-sm p-6">
+          <div className="flex-grow">
+            <footer className="bg-black text-gray-300 text-sm p-6">
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2">
               <div className="justify-start text-left">
                 <p className=""><span className="text-laguna-red">Laguna</span> <span className="text-laguna-yellow">Blues</span></p>
@@ -37,9 +38,10 @@ export default function RootLayout({ children }) {
               </div>
             </div>
             <div className="mt-2 text-center">
-              <span className="text-xs text-thin">© {new Date().getFullYear()} Laguna Blues (Falkenstein, Germany). All rights reserved.</span>
+                <span className="text-xs text-thin">© {new Date().getFullYear()} Laguna Blues (Falkenstein, Germany). All rights reserved.</span>
             </div>
-          </footer>
+            </footer>
+          </div>
         </div>
       </body>
     </html>
