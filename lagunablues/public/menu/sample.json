@@ -1,0 +1,67 @@
+{
+    "Pizza": [
+        {
+            "number": 1,
+            "type": "Pizza",
+            "name": "Margherita",
+            "price": 6.5,
+            "description": [
+                "Tomaten",
+                "Käse"
+            ]
+        },
+        {
+            "number": 2,
+            "type": "Pizza",
+            "name": "Funghi",
+            "price": 7,
+            "description": [
+                "Tomaten",
+                "Käse",
+                "Pilze"
+            ]
+        }
+    ],
+    "Fleischspezialitäten": [
+        {
+            "number": 104,
+            "type": "Fleischspezialitäten",
+            "name": "Grigliata Mista",
+            "price": 18,
+            "description": [
+                "Flescheplatte von Grill"
+            ]
+        }
+    ],
+    "Nudelgerichte": [
+        {
+            "number": 110,
+            "type": "Nudelgerichte",
+            "name": "Tortellini Pomodoro e Basilico",
+            "price": 8.5,
+            "description": [
+                "Tomatensauce",
+                "Basilikum"
+            ]
+        },
+        {
+            "number": 111,
+            "type": "Nudelgerichte",
+            "name": "Tortellini Panna e Prosciutto",
+            "price": 8.5,
+            "description": [
+                "Schinken",
+                "Sahne"
+            ]
+        },
+        {
+            "number": 117,
+            "type": "Nudelgerichte",
+            "name": "Spaghetti Bolognese",
+            "price": 8,
+            "description": [
+                "Mit Fleischsauce"
+            ]
+        }
+    ]
+}

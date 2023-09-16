@@ -4,35 +4,27 @@ import { pubPath } from "@/lib/util";
 import SubMenu from "./submenu";
 import { useEffect, useState } from "react";
 import LoadingSpinner from "../components/loading";
+import { csvSubMenuToJSON } from "./lib/parser";
 
-const sMenus = [
-    {
-        title: "Pizza",
-        item_file: pubPath("/menu/pizza.json"),
-    },
-    {
-        title: "Fish",
-        item_file: pubPath("/menu/fish.json")
-    }
-]
 
 export default function Menu() {
     const [loading, setLoading] = useState(true);
     const [subMenus, setSubMenus] = useState(null);
-    const url = pubPath("/menu/menu_en.json")
+    const url = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTgamVhNXghGnNR_X4GiyO5k1X7_UXucGH86F4BdhdGJTcMkN2Jf7X_8VwzO84X3CgoKq9VVxK2xuHY/pub?output=tsv";
     useEffect(() => {
         fetch(url)
-            .then(response => response.json())
+            .then(response => response.text())
             .then((data => {
                 setLoading(false);
-                setSubMenus(data);
+                setSubMenus(csvSubMenuToJSON(data));
             }))
             .catch(error => {
                 setLoading(false);
-                setSubMenus([]);
+                setSubMenus({err: "Error"});
+                console.log(error);
             })
         setLoading(false);
-        setSubMenus(sMenus);
+        setSubMenus([]);
     }, [])
     return (
         <div>
@@ -42,9 +34,9 @@ export default function Menu() {
                 <div className="mt-8">
                     <LoadingSpinner width="w-16" height="h-16" circleColor="text-laguna-yellow" spinColor="fill-laguna-red"/>
                 </div> :
-                <div className="w-full">
-                    {subMenus.map((menu, index) => (
-                        <SubMenu key={index} title={menu.title} url={pubPath(menu.item_file)} />
+                <div className="w-full mx-3 md:mt-5">
+                    {Object.keys(subMenus).map((category, index) => (
+                        <SubMenu key={index} title={category} items={subMenus[category]}/>
                     ))}
                 </div>}
             </div>
