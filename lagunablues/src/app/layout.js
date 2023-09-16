@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
                 <p>93167 Falkenstein</p>
                 <p>Tel.(+49) 09462 322</p>
               </div>
-              <div className="justify-end text-right">
+              <div className="justify-end text-left md:text-right mt-2 md:mt-0">
                 <p className="text-laguna-yellow">Öffnungszeiten</p>
                 <p>11.30 - 14.00 Uhr 17.30 - 23.00 Uhr</p>
                 <p>Freitag 17.30 - 23.00 Uhr</p>
