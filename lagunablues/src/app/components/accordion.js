@@ -9,14 +9,15 @@ const Accordion = ({ title, children }) => {
     };
 
     return (
-        <div className="border border-laguna-red p-2 mb-4 rounded">
+        <div className=" border-laguna-red mb-4 rounded">
             <div
-                className="flex items-center cursor-pointer"
+                className="flex items-center cursor-pointer bg-red-950"
                 onClick={toggleAccordion}
             >
-                <h2 className="text-xl text-laguna-yellow">{title}</h2>
-                <div className="ml-2">
+                <h2 className="text-[1.5rem] text-laguna-yellow p-2">{title}</h2>
+                <div className="ml-2 grow">
                     {expanded ? (
+                        
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6"
