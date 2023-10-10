@@ -1,30 +1,25 @@
 "use client";
-import { useState, useEffect } from "react";
+
 import Accordion from "../components/accordion";
-import LoadingSpinner from "../components/loading";
 
-export default function SubMenu({ title, url }) {
-    const [loading, setLoading] = useState(true);
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        fetch(url)
-            .then((response) => response.json())
-            .then((data) => {
-                setItems(data);
-                setLoading(false);
-            })
-            .catch((error) => {
-                console.error('Error loading data:', error);
-                setLoading(false);
-            });
-    }, []);
-
-
-
+const MenuItem = ({ item }) => {
     return (
-        <>
-            {loading ? <LoadingSpinner /> : <Accordion title={title} items={items} />}
-        </>
+        <div className="even:bg-gray-800 odd:bg-gray-700 hover:bg-red-800 p-2 flex items-center cursor-pointer">
+            <div className="flex-1">
+                <p className="text-lg font-bold">{item.number} - {item.name}</p>
+                <p className="font-thin">{item.description.join(" - ")}</p>
+            </div>
+            <div className="ml-3">
+                <p className="ml-4text-right text-lg">{item.price} €</p>
+            </div>
+        </div>
+    )
+}
+
+export default function SubMenu({ title, items }) {
+    return (
+        <Accordion title={title}>
+            {items.map((item, index) => <MenuItem key={index} item={item}></MenuItem>)}
+        </Accordion>
     );
 }

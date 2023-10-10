@@ -1,33 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import Image from 'next/image'
-import { pubPath } from '@/lib/util';
 
-const AccordionItem = ({ item }) => {
-    return (
-        <div className="mb-5">
-        <div className="mt-2 flex items-center cursor-pointer">
-            
-            <Image
-                src={item.avatar}
-                alt={item.name}
-                className="w-10 h-10 rounded-full mr-2"
-                width={30}
-                height={30}
-                onError={e => e.target.src =pubPath("/icons/dish.svg")}
-            />
-            <div className="flex-1">
-                <p className="font-bold">{item.name}</p>
-                <p className="text-gray-300">{item.description}</p>
-            </div>
-            <p className="text-right">{item.price}</p>
-        </div>
-        <hr className="mt-2 mx-auto w-full border-t-2 border-gray-700" />
-        </div>
-    )
-}
-
-const Accordion = ({ title, items }) => {
+const Accordion = ({ title, children }) => {
     const [expanded, setExpanded] = useState(false);
 
     const toggleAccordion = () => {
@@ -35,14 +9,15 @@ const Accordion = ({ title, items }) => {
     };
 
     return (
-        <div className="border border-gray-300 p-2 mb-2 rounded">
+        <div className=" border-laguna-red mb-4 rounded">
             <div
-                className="flex items-center cursor-pointer"
+                className="flex items-center cursor-pointer bg-red-950"
                 onClick={toggleAccordion}
             >
-                <h2 className="text-lg">{title}</h2>
-                <div className="ml-2">
+                <h2 className="text-[1.5rem] text-laguna-yellow p-2">{title}</h2>
+                <div className="ml-2 grow">
                     {expanded ? (
+                        
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6"
@@ -55,6 +30,7 @@ const Accordion = ({ title, items }) => {
                                 strokeLinejoin="round"
                                 strokeWidth="2"
                                 d="M5 15l7-7 7 7"
+                                className="text-laguna-yellow"
                             />
                         </svg>
                     ) : (
@@ -70,6 +46,7 @@ const Accordion = ({ title, items }) => {
                                 strokeLinejoin="round"
                                 strokeWidth="2"
                                 d="M19 9l-7 7-7-7"
+                                className="text-laguna-yellow"
                             />
                         </svg>
                     )}
@@ -77,10 +54,8 @@ const Accordion = ({ title, items }) => {
             </div>
             {expanded && (
                 <div>
-                {items.map((item, index) => (
-                    <AccordionItem key={index} item={item}></AccordionItem>
-                ))}
-            </div>
+                    {children}
+                </div>
                     
             )}
         </div>
