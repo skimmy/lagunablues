@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "laguna-red": "#bf2329",
+        "laguna-red": "#6b1c23",
         "laguna-yellow": "#fbc707"
       },
 
