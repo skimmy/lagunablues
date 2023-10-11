@@ -12,14 +12,14 @@ export default function RootLayout({ children }) {
       <body className="bg-gray-900 text-white font-sans">
         <div className="flex flex-col min-h-screen">
           <div className="flex-grow">
-            <div>
+            <div className="print:hidden">
               <Navigation></Navigation>
             </div>
             <div className="flex-grow mx-auto">
               {children}
             </div>
           </div>
-          <div className="flex-grow">
+          <div className="flex-grow print:hidden">
             <footer className="bg-black text-gray-300 text-sm p-6">
             <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2">
               <div className="justify-start text-left">
