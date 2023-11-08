@@ -1,8 +1,10 @@
 export function csvSubMenuToJSON(csvText) {
     const lines = csvText.split(/\r?\n/);
     const header = lines[0].split("\t");
+    
     // determined dynamically because of the note columns may vary in number
     const ingredientsIndex = header.indexOf("Ingredienti");
+    const allergenHeader = header.slice(5, ingredientsIndex);
     const items = lines.slice(1).map((item) => {
         const propArray = item.split("\t");
         return {
@@ -11,11 +13,13 @@ export function csvSubMenuToJSON(csvText) {
             subType: propArray[2], // SottoCat
             name: propArray[3], // Nome
             price: parseFloat(propArray[4].replace(",", ".")), // Prezzo
-            notes: propArray.slice(5, ingredientsIndex).map( note => note !== ""), // A,B,... 
+            notes: propArray.slice(5, ingredientsIndex)
+                .map( (note, idx) => (note !== "") ? allergenHeader[idx] : "" )
+                .filter( x => x !== ""), // A,B,... 
             description: propArray.slice(ingredientsIndex).filter(item => item.trim() !== ""),
         }
     })
-
+    console.log(items);
     // The following code creates the hierarchical data from the flat csv rows.
     //   Category (e.g., Nudeln) 
     //     -> SubCategory (e.g., Spaghetti)
