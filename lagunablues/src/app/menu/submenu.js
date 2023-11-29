@@ -100,6 +100,7 @@ const MenuItem = ({ item }) => {
     return (
         <div className="even:bg-gray-800 odd:bg-gray-700 hover:bg-red-800 px-7 py-2 flex items-center cursor-pointer print:text-black">
             <div className="flex-1">
+                
                 <p className="text-lg">{item.number} - {item.name} <span className="ml-2">{item.notes.map(i => <Note info={notesInfo[i]}></Note>)}</span></p>
                 <p className="font-thin font-xs">{item.description.join(" - ")}</p>
             </div>
@@ -110,13 +111,25 @@ const MenuItem = ({ item }) => {
     )
 }
 
+const InfoItem = ({ item }) => {
+    return (
+        <div className="bg-gray-600 px-7 py-2 flex items-center cursor-pointer print:text-black">
+            <div className="flex-1">
+                <p className="font-thin text-xl text-center">{item.name}</p>
+            </div>
+        </div>
+    );
+}
+
 export default function SubMenu({ title, items }) {
     return (
         <Accordion title={title}>
             {Object.keys(items).map((subCat, idx) =>
                 <div key={idx}>
                     {subCat !== "" ? <div className="text-2xl font-thin tracking-widest bg-gray-600 text-white p-2 content-center uppercase">{subCat}</div> : ""}
-                    {items[subCat].sort((a,b) => a.number - b.number).map((item, index) => <MenuItem key={index} item={item}></MenuItem>)}
+                    {items[subCat]
+                        .sort((a,b) => a.number - b.number)
+                        .map((item, index) => item.number < 900 ? <MenuItem key={index} item={item}></MenuItem> : <InfoItem key={index} item={item}></InfoItem>)}
                 </div>
             )}
         </Accordion>
