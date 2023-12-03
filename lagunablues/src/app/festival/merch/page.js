@@ -11,10 +11,9 @@ export default function FestivalMerch() {
     return (
         <div>
             <h1 className="text-center my-4 text-4xl md:text-6xl text-laguna-red">Laguna<span className="text-laguna-yellow" style={{textShadow: "1px 1px #000000"}}>Blues</span> Shop</h1>
-            <div className="grid grid-cols-1 gap-0 md:grid-cols-2 xl:grid-cols-4 mt-8">
+            <div className="flex flex-wrap justify-around mt-8">
                 {items.map((item, index) => (
-                    // <div className="place-self-center mb-4 p-6 border border-double border-2 hover:bg-red-950">
-                    <div className="place-self-center">
+                    <div className="place-self-center max-w-max min-w-min my-4">
                         <SellItem key={index} item={item}></SellItem>
                     </div>
                 ))}
