@@ -1,5 +1,5 @@
 import { pubPath } from "@/lib/util";
-import Carousel from "./components/carousel";
+import Carousel from "./components/carousel.js";
 
 const images = [
   pubPath("/foto/lb_001.jpeg"),
@@ -10,8 +10,8 @@ const images = [
 export default function Home() {
   return (
     <>
-    <div className="grid grid-cols-1">
-      <div className="z-1 row-start-1 row-end-1 col-start-1 col-end-1 ">
+    <div className="relative isolate grid grid-cols-1">
+      <div className="z-0 row-start-1 row-end-1 col-start-1 col-end-1 ">
         <Carousel images={images} showButtons={false}></Carousel>
       </div>
       <div className="z-20 row-start-1 row-end-1 col-start-1 col-end-1 left-0 z-2 mt-0 w-full text-center">

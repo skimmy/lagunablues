@@ -20,19 +20,7 @@ const Carousel = ({ images, showButtons = true, switchTime = 5000, brightness=10
         const interval = setInterval(nextSlide, switchTime);
         return () => clearInterval(interval);
     }, [currentIndex]);
-// .container {
-//   display: grid;
-//   grid-template: "container";
-//   place-items: center;
-//   place-content: center;
-//   overflow: hidden;
-//   max-height: clamp(450px, 50vh, 600px);
-// }
 
-// .container > * {
-//   grid-area: container;
-//   max-width: 1000px;
-// }
     return (
         <div className="grid grid-cols-1 justify-items-center overflow-hidden max-h-screen w-full">
             {images.map((image, index) => (

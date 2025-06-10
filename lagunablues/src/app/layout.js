@@ -10,12 +10,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-gray-900 text-white font-sans">
-        <div className="flex flex-col min-h-screen">
-          <div className="flex-grow">
+        <div className="relative flex flex-col min-h-screen">
+          <div className="relative z-50 flex-grow">
             <div className="print:hidden">
               <Navigation></Navigation>
             </div>
-            <div className="flex-grow mx-auto">
+            <div className="z-10 flex-grow mx-auto">
               {children}
             </div>
           </div>
